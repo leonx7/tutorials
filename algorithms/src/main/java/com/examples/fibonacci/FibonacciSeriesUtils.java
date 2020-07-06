@@ -9,7 +9,7 @@ public class FibonacciSeriesUtils {
         return (nthFibonacciTermRecursiveMethod(n - 1) + nthFibonacciTermRecursiveMethod(n - 2));
     }
 
-    public static int nthFibonacciTermCashingMethodUtil(int n, int[] f) {
+    private static int nthFibonacciTermCashingMethodUtil(int n, int[] f) {
 
         if (f[n] == -1) {
             f[n] = (nthFibonacciTermCashingMethodUtil(n - 1, f) + nthFibonacciTermCashingMethodUtil(n - 2, f));
@@ -44,12 +44,6 @@ public class FibonacciSeriesUtils {
     public static int nthFibonacciTermUsingBinetsFormula(int n) {
         double squareRoutOf5 = Math.sqrt(5);
         double phi = (1 + squareRoutOf5) / 2;
-        int nthTerm = (int) ((Math.pow(phi, n) - Math.pow(-phi, -n)) / squareRoutOf5);
-        return nthTerm;
-    }
-
-    public static void main(String[] args) {
-        int i = nthFibonacciTermIterativeMethod(7);
-        System.out.println(i);
+        return (int) ((Math.pow(phi, n) - Math.pow(-phi, -n)) / squareRoutOf5);
     }
 }
