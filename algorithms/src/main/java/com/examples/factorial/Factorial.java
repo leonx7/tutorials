@@ -8,6 +8,7 @@ import java.util.stream.LongStream;
 
 public class Factorial {
 
+    //The complexity of the algorithm О(N);
     public static long factorialUsingRecursion(int n) {
         if (n == 0) {
             return 1;

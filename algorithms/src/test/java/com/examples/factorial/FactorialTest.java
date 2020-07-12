@@ -1,45 +1,45 @@
 package com.examples.factorial;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FactorialTest {
 
+    private static int number;
+    private static long expectedValue;
+
+    @BeforeAll
+    public static void initVariables() {
+        number = 9;
+        expectedValue = 362880;
+    }
+
     @Test
     void factorialUsingRecursion() {
-        int number = 9;
-        long expectedValue = 362880;
         assertEquals(Factorial.factorialUsingRecursion(number), expectedValue);
     }
 
     @Test
     void factorialUsingStreams() {
-        int number = 9;
-        long expectedValue = 362880;
         assertEquals(Factorial.factorialUsingStreams(number), expectedValue);
     }
 
     @Test
     void factorialUsingApacheCommons() {
-        int number = 9;
-        long expectedValue = 362880;
         assertEquals(Factorial.factorialUsingApacheCommons(number), expectedValue);
     }
 
     @Test
     void factorialHavingLargeResult() {
-        int number = 9;
-        BigInteger expectedValue = BigInteger.valueOf(362880);
-        assertEquals(Factorial.factorialHavingLargeResult(number), expectedValue);
+        assertEquals(Factorial.factorialHavingLargeResult(number), BigInteger.valueOf(expectedValue));
     }
 
     @Test
     void factorialUsingGuava() {
-        int number = 9;
-        BigInteger expectedValue = BigInteger.valueOf(362880);
-        assertEquals(Factorial.factorialUsingGuava(number), expectedValue);
+        assertEquals(Factorial.factorialUsingGuava(number), BigInteger.valueOf(expectedValue));
     }
 }
