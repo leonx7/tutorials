@@ -50,4 +50,19 @@ public class FibonacciSeriesUtils {
         double phi = (1 + squareRoutOf5) / 2;
         return (long) ((Math.pow(phi, n) - Math.pow(-phi, -n)) / squareRoutOf5);
     }
+
+    public static void main(String[] args) {
+
+        long startTime1 = System.nanoTime();
+        nthFibonacciTermUsingBinetsFormula(10);
+        long endTime1 = System.nanoTime();
+        long duration1 = (endTime1 - startTime1);
+        System.out.println("Duration 1: " + duration1);
+
+        long startTime2 = System.nanoTime();
+        nthFibonacciTermUsingBinetsFormula(50);
+        long endTime2 = System.nanoTime();
+        long duration2 = (endTime2 - startTime2);
+        System.out.println("Duration 2: " + duration2);
+    }
 }
