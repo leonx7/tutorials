@@ -21,4 +21,10 @@ class AdvancedSortTest {
         AdvancedSort.mergeSort(toSort, 0, toSort.length - 1);
         assertArrayEquals(sorted, toSort);
     }
+
+    @Test
+    void quickSort() {
+        AdvancedSort.quickSort(toSort, 0, toSort.length - 1);
+        assertArrayEquals(sorted, toSort);
+    }
 }
