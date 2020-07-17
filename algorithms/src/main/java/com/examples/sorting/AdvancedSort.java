@@ -1,8 +1,21 @@
 package com.examples.sorting;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 
 public class AdvancedSort {
+
+    //The complexity of the algorithm O(N * log N);
+    public static long[] mergeSort(long[] arr, int lowerBound, int upperBound) {
+        int middle;
+        if (lowerBound < upperBound) {
+            middle = (lowerBound + upperBound) / 2;
+            mergeSort(arr, lowerBound, middle);
+            mergeSort(arr, middle + 1, upperBound);
+            merge(arr, lowerBound, middle, upperBound);
+        }
+        return arr;
+    }
 
     private static void merge(long[] arr, int lowerBound, int middle, int upperBound) {
         int i;
@@ -30,16 +43,14 @@ public class AdvancedSort {
         }
     }
 
-    //The complexity of the algorithm O(N * log N);
-    public static long[] mergeSort(long[] arr, int lowerBound, int upperBound) {
-        int middle;
-        if (lowerBound < upperBound) {
-            middle = (lowerBound + upperBound) / 2;
-            mergeSort(arr, lowerBound, middle);
-            mergeSort(arr, middle + 1, upperBound);
-            merge(arr, lowerBound, middle, upperBound);
+    //The best-case complexity of the algorithm O(N * log N);
+    public static void quickSort(long[] arr, int l, int h) {
+        int p;
+        if ((h - l) > 0) {
+            p = partition(arr, l, h);
+            quickSort(arr, l, p - 1);
+            quickSort(arr, p + 1, h);
         }
-        return arr;
     }
 
     private static int partition(long[] arr, int lowerBound, int upperBound) {
@@ -64,13 +75,25 @@ public class AdvancedSort {
         arr[two] = temp;
     }
 
-    //The best-case complexity of the algorithm O(N * log N);
-    public static void quickSort(long[] arr, int l, int h) {
-        int p;
-        if ((h - l) > 0) {
-            p = partition(arr, l, h);
-            quickSort(arr, l, p - 1);
-            quickSort(arr, p + 1, h);
+    //The complexity of the algorithm is in the interval from O(N^3/2) to O( N^7/6);
+    public static void shellSort(long[] arr) {
+        int inner, outer;
+        long temp;
+        int h = 1;
+        while (h <= arr.length / 3) {
+            h = h * 3 + 1;
+        }
+        while (h > 0) {
+            for (outer = h; outer < arr.length; outer++) {
+                temp = arr[outer];
+                inner = outer;
+                while (inner > h - 1 && arr[inner - 1] >= temp) {
+                    arr[inner] = arr[inner - h];
+                    inner -= h;
+                }
+                arr[inner] = temp;
+            }
+            h = (h - 1) / 3;
         }
     }
 }

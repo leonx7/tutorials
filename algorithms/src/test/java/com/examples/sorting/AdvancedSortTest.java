@@ -27,4 +27,10 @@ class AdvancedSortTest {
         AdvancedSort.quickSort(toSort, 0, toSort.length - 1);
         assertArrayEquals(sorted, toSort);
     }
+
+    @Test
+    void shellSort() {
+        AdvancedSort.shellSort(toSort);
+        assertArrayEquals(sorted, toSort);
+    }
 }
