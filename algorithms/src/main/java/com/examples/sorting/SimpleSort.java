@@ -1,7 +1,5 @@
 package com.examples.sorting;
 
-import com.examples.datastructures.LinkedStack;
-
 public class SimpleSort {
 
     //The complexity of the algorithm O(N^2);

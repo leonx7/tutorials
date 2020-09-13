@@ -10,14 +10,6 @@ public class FibonacciSeriesUtils {
         return (nthFibonacciTermRecursiveMethod(n - 1) + nthFibonacciTermRecursiveMethod(n - 2));
     }
 
-    private static long nthFibonacciTermCashingMethodUtil(int n, long[] f) {
-
-        if (f[n] == -1) {
-            f[n] = (nthFibonacciTermCashingMethodUtil(n - 1, f) + nthFibonacciTermCashingMethodUtil(n - 2, f));
-        }
-        return f[n];
-    }
-
     //The complexity of the algorithm О(N);
     public static long nthFibonacciTermCashingMethod(int n) {
         long[] f = new long[n + 1];
@@ -27,6 +19,14 @@ public class FibonacciSeriesUtils {
             f[i] = -1;
         }
         return nthFibonacciTermCashingMethodUtil(n, f);
+    }
+
+    private static long nthFibonacciTermCashingMethodUtil(int n, long[] f) {
+
+        if (f[n] == -1) {
+            f[n] = (nthFibonacciTermCashingMethodUtil(n - 1, f) + nthFibonacciTermCashingMethodUtil(n - 2, f));
+        }
+        return f[n];
     }
 
     //The complexity of the algorithm О(N);

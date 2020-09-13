@@ -1,4 +1,4 @@
-package com.examples.datastructures;
+package com.examples.stack;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
