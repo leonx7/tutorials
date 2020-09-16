@@ -13,7 +13,7 @@ public class VectorAdapterFromRaster extends RasterGraphics implements VectorGra
     }
 }
 
-//Adapter using composition
+//Adapter using aggregation
 class VectorAdapterFromRaster2 implements VectorGraphicsInterface {
     RasterGraphics rg = new RasterGraphics();
 
