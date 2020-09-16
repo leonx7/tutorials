@@ -1,13 +1,13 @@
 package com.examples.fundamental.delegate;
 
 public class Painter {
-    Graphics graphics;
+    Graphic graphic;
 
-    public void setGraphics(Graphics graphics) {
-        this.graphics = graphics;
+    public void setGraphics(Graphic graphic) {
+        this.graphic = graphic;
     }
 
     public void draw() {
-        graphics.draw();
+        graphic.draw();
     }
 }

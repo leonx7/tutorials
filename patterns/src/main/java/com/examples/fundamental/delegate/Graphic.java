@@ -1,5 +1,5 @@
 package com.examples.fundamental.delegate;
 
-public interface Graphics {
+public interface Graphic {
     void draw();
 }

@@ -1,6 +1,7 @@
-package com.examples.fundamental.delegate;
+package com.examples.structural.composite;
 
-public class Circle implements Graphic {
+//"Leaf #3"
+public class Circle implements Shape {
     @Override
     public void draw() {
         System.out.println("Drawing circle");
