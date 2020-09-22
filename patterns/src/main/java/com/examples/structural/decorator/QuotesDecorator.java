@@ -1,7 +1,7 @@
 package com.examples.structural.decorator;
 
 //Concrete decorator #1
-public class QuotesDecorator extends Decorator{
+public class QuotesDecorator extends Decorator {
     public QuotesDecorator(PrinterI component) {
         super(component);
     }

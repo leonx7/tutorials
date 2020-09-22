@@ -7,7 +7,7 @@ public abstract class Decorator implements PrinterI {
         this.component = component;
     }
 
-    public void print(){
+    public void print() {
         component.print();
     }
 }
